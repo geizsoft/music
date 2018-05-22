@@ -1,0 +1,21 @@
+{
+  "name": "musicWeb",
+  "description": "website",
+  "main": "",
+  "keywords": [
+    "musicweb"
+  ],
+  "authors": [
+    "youyuan"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

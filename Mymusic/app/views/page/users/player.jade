@@ -1,0 +1,37 @@
+extends ../../layout
+
+block content
+	nav.navbar.navbar-inverse.navbar-fixed-bottom#musicPlayer
+		.container
+			audio(id="player")
+				source(src="/upload/music/1522068937268.mp3")
+
+			ul#playMusic
+				li.pull-left
+					button.btn.btn-link.glyphicon.glyphicon-step-backward
+				li.pull-left
+					button.btn.btn-link.glyphicon.glyphicon-play#play( type="button" onclick="playMusic()") 
+				//- li.pull-left
+					//- button.btn.btn-link.glyphicon.glyphicon-pause( type="button")
+				li.pull-left
+					button.btn.btn-link.glyphicon.glyphicon-step-forward
+				li.col-sm-4.pull-left
+					div.prestrain#prestrain(style="width:300px;")
+						div.progressBar#progressBar(style="width:0%;")
+						button#progressBtn.progressBtn(style="left:0%;")
+				li.pull-left
+					#playTime(style="color:#ccc;") 00:00
+				li.pull-left
+					p(style="color:#ccc;") /
+				li.pull-left
+					#allTime(style="color:#ccc;") 00:00
+				li.pull-left
+					button#volume.glyphicon.glyphicon-volume-up(onclick="volumeClick()")
+					div#volumeDiv
+						div#progress-vo
+							div#pro-vo-bar
+							button#pro-vo-btn
+
+			
+
+	script(src="/js/player.js")

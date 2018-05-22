@@ -1,0 +1,19 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/userPage.css",type="text/css",rel="stylesheet")
+
+	.container-fluid#menu
+		div.upload.row
+			div.uptitle.col-sm-10.col-sm-offset-1
+				span 我的上传 &nbsp;
+				span 累计上传 #{musics.length}首
+			ul.upul.col-sm-10.col-sm-offset-1
+				-var i = 0
+				each item in musics
+					-++i
+					li
+						span.text-danger #{i}.
+						span
+							a(href="/music/#{item._id}") #{item.title} - #{item.singer}

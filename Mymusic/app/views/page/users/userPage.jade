@@ -1,0 +1,214 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/userPage.css",type="text/css",rel="stylesheet")
+
+	.container-fluid#menu
+		div.userInfo.row
+			.col-sm-4
+				.ih-item.circle.effect3.left_to_right
+					a(href="#") 
+						.img
+							img(src= "#{user.img}")
+						.info
+							h3 #{user.name}
+							p#changeTime
+						a(href="/user/update/img") 修改头像
+			.col-sm-7
+				div.information
+					span #{user.name}
+					if user.role >= 50
+						span.ribbon1
+							a(href="/admin/adminIndex") 进入管理界面
+					a.btn.btn-default.setUser(href="#userInfo") 编辑个人资料
+				div.total
+					
+		div.listen.row
+			div.uptitle.col-sm-10.col-sm-offset-1
+				span 听歌记录 &nbsp;
+				span 累积听歌 #{listen.length}首
+			if listen.length == 0
+				div.noHistory.col-sm-10.col-sm-offset-1
+					div#cactus2.entry.threes.cactus
+						div
+					div.informationerr
+						p 暂无记录哦，亲~
+			else
+				ul.upul.col-sm-10.col-sm-offset-1
+					-var i = 0
+					each item in listen
+						-++i
+						li
+							span.text-danger #{i}.
+							span
+								a(href="/music/#{item.music._id}") #{item.music.title} - #{item.music.singer}
+				.more.col-sm-10.col-sm-offset-1
+					a#listen.hiss(href="/history/listen" data-id="1") 更多&gt;&gt;
+		div.upload.row
+			div.uptitle.col-sm-10.col-sm-offset-1
+				span 我的上传 &nbsp;
+				span 累计上传 #{musics.length}首
+			if musics.length == 0
+				div.noHistory.col-sm-10.col-sm-offset-1
+					div#cactus2.entry.threes.cactus
+						div
+					div.informationerr
+						p 暂无记录哦，亲~
+			else
+				ul.upul.col-sm-10.col-sm-offset-1
+					-var i = 0
+					each item in musics
+						-++i
+						li
+							span.text-danger #{i}.
+							span
+								a(href="/music/#{item._id}") #{item.title} - #{item.singer}
+				.more.col-sm-10.col-sm-offset-1
+					a#upload.hiss(href="/history/update" data-id="2") 更多&gt;&gt;
+		div.collect.row
+			div.uptitle.col-sm-10.col-sm-offset-1
+				span 我的收藏 
+				span 累计收藏 #{history.length}首
+			if history.length == 0
+				div.noHistory.col-sm-10.col-sm-offset-1
+					div#cactus2.entry.threes.cactus
+						div
+					div.informationerr
+						p 暂无记录哦，亲~
+			else
+				ul.upul.col-sm-10.col-sm-offset-1
+					-var i = 0
+					each item in history
+						-++i
+						li
+							span.text-danger #{i}.
+							span
+								a(href="/music/#{item.music._id}") #{item.music.title} - #{item.music.singer}
+				.more.col-sm-10.col-sm-offset-1
+					a#collect.hiss(href="/history/collect" data-id="3") 更多&gt;&gt;
+	#userInfo.detail.container-fluid
+		div.row
+			div.uptitle.col-sm-10.col-sm-offset-1
+				span 个人设置
+			div.set.col-sm-10.col-sm-offset-1
+				div.setimg.col-sm-4
+					div.changeimg
+						a(href="/user/update/img") 修改头像
+					div.imgs
+						img(src="#{user.img}")
+					br
+					a.btn.btn-default(href="/user/update/pws") 修改密码
+				div.users.col-sm-8
+					form.form-horizontal#changeUser
+						.form-group
+							label.col-sm-2.control-label(for="userName") 昵称
+							.col-sm-4
+								input#userName.form-control(type='text' name='user[name]' value=user.name)
+						.form-group
+							label.col-sm-2.control-label(for="userEmail") 邮箱
+							.col-sm-4
+								input#userEmail.form-control(type='text' name='user[email]' value=user.email)
+						.form-group
+							label.col-sm-2.control-label(for="userPhone") 电话
+							.col-sm-4
+								input#userPhone.form-control(type='text' name='user[phone]' value=user.phone)
+						.form-group
+							label.col-sm-2.control-label(for="userCon") 简介
+							.col-sm-10
+								textarea#userCon.form-control(rows="5" cols="10" style="resize:none;" name='user[content]') #{user.content}
+						.form-group
+							.col-sm-offset-2.col-sm-2
+								a.btn.btn-default(type="button",id="submit") 保存
+
+					div.userpostInfo
+						
+	//- #details1.detail.container-fluid
+	//- 	p 12312
+	//- #details2.detail.container-fluid
+	//- 	p 12312
+	//- #detail3.detail.container-fluid
+		p 12312
+		//- .row
+		//- 	.col-sm-3.col-md-2.sidebar
+		//- 		ul.nav.nav-sidebar
+		//- 			li.active#mine
+		//- 				a.glyphicon.glyphicon-cog(href="#") 
+		//- 					span 我的信息
+		//- 			li#set
+		//- 				a(href="#").glyphicon.glyphicon-arrow-down
+		//- 					span  下载记录
+		//- 			li#music
+		//- 				a(href="#").glyphicon.glyphicon-headphones 
+		//- 					span 上传记录
+		//- 			li#collect
+		//- 				a(href="#").glyphicon.glyphicon-star 
+		//- 					span 收藏
+		//- 			li
+		//- 				a(href="/upload/music").glyphicon.glyphicon-arrow-up 
+		//- 					span 上传音乐
+		//- 			li
+		//- 				a(href="/logout").glyphicon.glyphicon-off 
+		//- 					span 退出登录
+		//- 			if user.role > 40
+		//- 				li
+		//- 					a(href="/admin/adminIndex").glyphicon.glyphicon-tags
+		//- 						span  进入管理员界面
+		//- 	.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+		//- 		div.page1.page
+		//- 			.ih-item.circle.effect3.left_to_right
+		//- 				a(href="#")
+		//- 					.img
+		//- 						img(src= "#{user.img}")
+		//- 					.info
+		//- 						h3 #{user.name}
+		//- 						p#changeTime
+		//- 			ul.change
+		//- 				li.changePicture
+		//- 				li.changePWD
+		//- 				li.changeName
+		//- 				li.changeEmail
+		//- 				li.changePhone
+
+		//- 			//- a.btn.btn-success(href="/user/update/pws") 修改密码
+		//- 			//- a.btn.btn-success(href="/user/update/img") 
+
+		//- 			//- table.table.table-hover.table-responsive
+		//- 			//- 	tbody
+		//- 			//- 		tr
+		//- 			//- 			td 用户名
+		//- 			//- 			td #{user.name}
+		//- 			//- 			td: a.btn.btn-primary(href="/user/update/name") 修改
+		//- 			//- 		tr
+		//- 			//- 			td 邮箱
+		//- 			//- 			td #{user.email}
+		//- 			//- 			td: a.btn.btn-primary(href="/user/update/email") 修改邮箱
+		//- 			//- 		tr
+		//- 			//- 			td 电话
+		//- 			//- 			td #{user.phone}
+		//- 			//- 			td: a.btn.btn-primary(href="/user/update/phone") 修改号码
+		//- 		div.pageStyle.page2.page
+		//- 		div.pageStyle.page3.page
+		//- 			table.table.table-hover.table-bordered
+		//- 				thead
+		//- 					th 歌曲名
+		//- 					th 歌手
+		//- 					th 上传时间
+		//- 				tbody
+					
+		//- 			.container.pageul
+		//- 				ul.pagination
+							
+		//- 		div.pageStyle.page4.page
+		//- 			table.table.table-hover.table-bordered
+		//- 				thead
+		//- 					th 歌曲名
+		//- 					th 歌手
+		//- 					th 收藏时间
+		//- 				tbody
+		//- 			//- table.table.table-hover.table-bordered
+		//- 			.container.pageul
+		//- 				ul.pagination
+	script(src="/js/userPage.js")
+
+	

@@ -1,0 +1,16 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/pwdPage.css",type="text/css",rel="stylesheet")
+
+		#forms
+			form.form-horizontal.col-sm-8.col-sm-offset-2(method="post",action="/uploadlrc",enctype="multipart/form-data")
+				input(type="hidden",name="music[_id]",value=id)
+				.form-group
+					label.col-sm-3.control-lable 请上传文件
+					.col-sm-7
+						input.require#input(type="file",name="lrcs")
+				.form-group
+					.col-sm-offset-2.col-sm-2
+						button.btn.btn-default(type="submit",id="submit") 录入

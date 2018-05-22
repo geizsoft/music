@@ -1,0 +1,23 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/imgPage.css",type="text/css",rel="stylesheet")
+	.container#menu
+		div.show
+			img#show
+		br
+		div.col-sm-8.pull-right
+			form#imgForm.form-horizontal(method="post",action="/user/update/img",enctype="multipart/form-data")
+				if user
+					input(type="hidden",name="user[_id]",value=user._id)
+				.form-group
+					.col-sm-5.fileinput-button
+						label.pull-right.btn.btn-success.control-lable(for="input") 上传头像
+						input.pull-right#input(type="file",name="input")
+					.col-sm-5
+						button.btn.btn-success#submit(type="submit") 提交
+				.form-group
+					.col-sm-3
+						
+	script(src="/js/imgPage.js")

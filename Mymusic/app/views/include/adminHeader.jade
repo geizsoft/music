@@ -1,0 +1,34 @@
+nav.navbar.navbar-fixed-top.navbar-inverse
+	.container-fluid
+		.navbar-header
+			button.navbar-toggle.collapsed(data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+				span.sr-only daohang
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+			a.navbar-brand admin
+		#navbar.navbar-collapse.collapse
+			ul.nav.navbar-nav.navbar-left
+				li.active
+					a(href="/admin/adminIndex") 首页
+				li
+					a(href="/admin/userlist") 账号管理
+				li
+					a(href="/admin/categoriesList") 音乐分类管理
+				li
+					a(href="/admin/list") 音乐文件管理
+			ul.nav.navbar-nav.navbar-right
+				if user
+					li
+						a(href="/user/userPage",target="_black") #{user.name}
+					li
+						a.navbar-link(href="/logout")
+							span 退出
+				else
+					if !login
+						li
+							a(href="/admin/userlogin") 登录
+						
+			//- form.navbar-form.navbar-right
+			//- 	input.form-control(type="text" placeholder="搜索..")
+			

@@ -1,0 +1,82 @@
+body{
+	min-width: 1200px;
+}
+#menu{
+	margin-top: 60px;
+	min-height: 500px;
+}
+ul li{
+	list-style: none;
+}
+strong{
+	display: block;
+	width: 100%;
+	border-bottom: 2px solid #c20c0c;
+	padding-left: 3%;
+	font-size: 20px;
+}
+#menu ul{
+	margin-top: 10px;
+	padding: 0;
+	border:1px solid #ccc;
+}
+#menu ul li{
+	position: relative;
+	height: 30px;
+	line-height: 2;
+	border-bottom: 1px solid #ccc;
+}
+.musicTitle{
+	width: 15%;
+	display: inline-block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+#menu ul li:last-child{
+	border-bottom: none;
+}
+#menu ul li:hover .text-muted{
+	opacity: 1;
+}
+#menu ul li a{
+	color: #888;
+}
+#menu ul li span:first-child{
+	padding-left: 10px;
+	float: left;
+	width: 5%;
+	display: block;
+}
+#menu ul li span:ntn-child(2){
+	float: left;
+	display: block;
+	
+}
+.text-muted{
+	float: right;
+	/*position: absolute;*/
+	right: 40%;
+	width: 80%;
+    height: 20px;
+    opacity: 0;
+    margin-top: 5px;
+}
+.text-muted:hover{
+	opacity: 1;
+}
+.text-muted button{
+	border: none;
+	background-color: rgba(0,0,0,0);
+	outline: none;
+}
+.text-muted button:hover{
+	color: #666;
+}
+.text-muted .glyphicon{
+	font-size: 18px;
+	/*border: 1px solid red;*/
+}
+.text-muted button:focus{
+	color: #ccc;
+}

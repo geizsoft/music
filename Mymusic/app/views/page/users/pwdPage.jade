@@ -1,0 +1,28 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/pwdPage.css",type="text/css",rel="stylesheet")
+
+	#menu
+		#jeans-pocket.entry
+			div
+		#forms
+			form.form-horizontal.col-sm-8.col-sm-offset-2(method="post",action="/user/update/pws")
+				input(type="hidden",name="user[_id]",value=user._id)
+				.form-group
+					label.col-sm-3.control-lable(for="password") 请输入新密码
+					.col-sm-7
+						input.form-control#password.require(type="password",name="user[pwd]")
+				.form-group
+					label.col-sm-3.control-lable(for="password1") 再次输入
+					.col-sm-7
+						input.form-control#password1.require(type="password",name="user[pwd1]")
+				.form-group
+					.col-sm-offset-6.col-sm-1
+						button.btn.btn-success(type="submit",id="submitPwd") 提交
+					.col-sm-2.col-sm-offset-1
+						a(href="/user/userPage") 返回&gt;&gt;
+
+	script(src="/js/pwdPage.js")
+				

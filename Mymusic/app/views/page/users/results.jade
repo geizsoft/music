@@ -1,0 +1,39 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/result.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		.row
+			ul.lists.ul-list
+				strong.text-danger #{keyword}
+				if musics && musics.length > 0
+					//- -console.log(musics);
+				each item in musics
+					li
+						.row
+							a.text-info.col-sm-3(href="/music/#{item._id}") #{item.title}
+							a.text-into.col-sm-3(href="/music/singer/#{item.singer}") #{item.singer}
+							.text-muted.col-sm-3
+								button.glyphicon.glyphicon-play-circle.btn-paly(data-id="#{item._id}")
+								//- button.glyphicon.glyphicon-download-alt
+								button.glyphicon.glyphicon-plus.btn-add(data-id="#{item._id}")
+	.container.pageul
+		ul.pagination
+			li
+				a(href="#") &laquo;
+			- for (var i = 0; i < totalPage; i++){
+				- if(currentPage == (i + 1)){
+					li.active
+						span #{currentPage}
+				- }
+				- else{
+					-console.log(i);
+					li
+						a(href='/results?#{query}&p=#{i}') #{i+1}
+				- }
+			- }
+			li
+				a(href="#") &raquo;
+	script(src='/js/player.js')

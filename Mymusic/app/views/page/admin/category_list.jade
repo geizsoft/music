@@ -1,0 +1,72 @@
+extends ../../adminLayout
+
+block content
+	head
+		link(href="/css/adminCate.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		.row
+			.col-sm-12
+				table.table.table-hover.table-bordered
+					thead
+						tr
+							th 分类
+							th 时间
+							th 删除
+							//- th 修改
+					tbody
+						each item in categories
+							tr(class="item-id-#{item._id}")
+								td #{item.name}
+								td #{moment(item.meta.updateAt).format('YYYY/MM/DD')}
+								
+								td
+									button.btn.btn-danger.delete(type="button",data-id="#{item._id}") 删除
+			//- .col-sm-2.col-md-3
+				//- a.glyphicon.glyphicon-plus(href="/admin/category") 新增
+
+		div.insets.container.row
+			button.btn.btn-link.glyphicon.glyphicon-plus#create(style="outline:none;") 新增
+			button.btn.btn-link.glyphicon.glyphicon-minus#dis(style="outline:none;") 隐藏
+			form.form-horizontal#form(method="post",action="/admin/category/new")
+				.form-group.col-sm-8
+					label.col-sm-2.control-label(for="inputCategory") 分类
+					.col-sm-5
+						input#inputCategory.form-control(type="text",name="category[name]")
+					.col-sm-2
+						button.btn.btn-default(type="submit") 保存
+
+			
+	
+	.container.pageul
+		ul.pagination
+			if totalPage > 5
+				- for (var i = 0; i < 4; i++){
+					-if(currentPage == (i + 1)){
+						li.active 
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{currentPage}
+					-}
+					-else{
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+					-}
+				-}
+				li
+					span ...
+				- for (var i = totalPage - 1; i < totalPage;i++){
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+				-	}
+			else
+				- for (var i = 0; i < totalPage; i++){
+					-if(currentPage == (i + 1)){
+						li.active 
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{currentPage}
+					-}
+					-else{
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+					-}
+				-}
+	
+	script(src="/js/catelist.js")

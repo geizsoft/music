@@ -1,0 +1,152 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/musicDetial.css",type="text/css",rel="stylesheet")
+
+		.container#detail
+			.row
+				.col-md-8
+					div.covers
+
+						div#contr.pause-needle
+							img(src='/images/play_needle.png')
+						div#picture.pull-left.col-sm-4
+							div.ih-item.circle.effect6.scale_up
+								a(href="#")
+									.img
+										if music.poster
+											img(src="#{music.poster}")
+										else
+											img(src='/img/5.jpg')
+									.info
+										.info-back
+											h3 #{music.title}
+											p #{music.singer}
+					div.information.pull-left.col-sm-6
+						ul
+							li
+								span 歌曲
+								span 
+									strong #{music.title}
+							li
+								span 歌手
+								span 
+									a(href="/music/singer/#{music.singer}") #{music.singer}
+							li
+								span 专辑
+								span 
+									a #{music.special}
+							li
+								span 类型
+								span #{music.category.name}
+						a.btn.btn-primary#play(data-id="#{music._id}",href="javascript:;") 播放
+						a.btn.btn-primary#add(data-id="#{music._id}" href="javascript:;") +
+						if user
+							if collect.length > 0 && collect[0].collect == 2
+								a.collect#collect(href="#" data-uid="#{user._id}" data-mid="#{music._id}") 
+									span.glyphicon.glyphicon-star.text-danger 收藏
+							else
+								a.collect#collect(href="#" data-uid="#{user._id}" data-mid="#{music._id}") 
+									span.glyphicon.glyphicon-star 收藏
+						else
+							a.collect#collect(href="#" data-mid="#{music._id}") 
+								span.glyphicon.glyphicon-star 收藏
+						div.col-sm-7.word
+							
+
+						
+				.col-md-3#other
+					//- a.btn.btn-dafualt(href="/uploadlrc/#{music._id}") 上传歌词
+					div#lecs
+						
+		.container#com
+			
+			.panel-heading
+				h3 评论区
+			.panel-body
+				#comments
+					//- form#commentForm(method="POST",action="/user/comment")
+					form#commentForm()
+						input(type="hidden",name="comment[music]",value="#{music._id}",id="commentMusic")
+						if user
+							input(type="hidden",name="comment[from]",value="#{user._id}",id="commentUser")
+						.form-group
+							textarea.form-control(id="words",name="comment[content]",rows="4",style="resize:none;")
+						if user
+							.form-group
+								.col-sm-11
+								button.btn.btn-primary(type="submit",id="sendComment") 评论
+						else
+							a.navbar-link(href="#") 未登录
+				hr
+
+
+				ul.media-list#comArea
+					each item in comments
+						if item.to
+							li.media(class="item-id-#{item._id}")
+								.pull-left
+									//- a.comment(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}")
+									img.media-object.img-thumbnail.img-responsive(src="#{item.from.img}",style="width:50px;")
+								.media-body
+									p
+										a #{item.from.name}
+										span :#{item.content}
+									div
+										span.data.text-muted #{moment(item.meta.createAt).format('YYYY年MM月DD日 HH:mm')}
+										.pull-right.col-sm-2
+											a.btn.btn-link.clicks(data-id="#{user._id}",data-coms="#{item._id}",id="#{item._id}")
+												if item.like == 0
+													span.glyphicon.glyphicon-thumbs-up.like 
+												else
+													each i in item.userlike
+														if i == user._id
+															span.glyphicon.glyphicon-thumbs-up.like.text-danger #{item.like}
+														else
+															span.glyphicon.glyphicon-thumbs-up.like #{item.like}
+											a.comment(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}") |回复
+											if item.from._id == user._id
+												a.delete(data-id="#{item._id}") |删除
+									hr
+									div.media-body
+										p
+											a @#{item.to.name}
+											span :#{item.cid.content}
+										p.text-muted #{moment(item.cid.meta.createAt).format('YYYY年MM月DD日 HH:mm')}
+						else
+							li.media(class="item-id-#{item._id}")
+								.pull-left
+									//- a.comment(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}")
+									img.media-object.img-thumbnail.img-responsive(src="#{item.from.img}",style="width:50px;")
+								.media-body
+									p
+										a #{item.from.name}
+										span :#{item.content}
+									div
+										span.data.text-muted #{moment(item.meta.createAt).format('YYYY年MM月DD日 HH:mm')}
+										.pull-right.col-sm-2
+											a.btn.btn-link.clicks(data-id="#{user._id}",data-coms="#{item._id}",id="#{item._id}")
+												if item.like == 0
+													span.glyphicon.glyphicon-thumbs-up.like 
+												else
+													each i in item.userlike
+														if i == user._id
+															span.glyphicon.glyphicon-thumbs-up.like.text-danger #{item.like}
+														else
+															span.glyphicon.glyphicon-thumbs-up.like #{item.like}
+											a.comment(href="#comments",data-cid="#{item._id}",data-tid="#{item.from._id}") |回复
+											if item.from._id == user._id
+												a.delete(data-id="#{item._id}") |删除
+								
+						hr
+					
+	
+	script(src="/js/jquery.rotate.js")
+	script(src="/js/musicDetail.js")
+
+	script(src="/js/player.js")
+
+
+
+					

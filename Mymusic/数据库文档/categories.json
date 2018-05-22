@@ -1,0 +1,189 @@
+[
+  {
+    "_id": "5af3bcf96dc3ed150ce8d687",
+    "meta": {
+      "createAt": "2018-05-10T03:31:05.984Z",
+      "updateAt": "2018-05-10T07:34:35.683Z"
+    },
+    "musics": [
+      "5af3be726dc3ed150ce8d697",
+      "5af3c0616dc3ed150ce8d698",
+      "5af3c26f6dc3ed150ce8d69a",
+      "5af3c34b8e7fa51fb87a66ff",
+      "5af3e8645b7a872858c581e5",
+      "5af3e9af7d949d1e24ea0c8c",
+      "5af3f5d97d949d1e24ea0c8f",
+      "5af3f60b7d949d1e24ea0c90"
+    ],
+    "name": "流行",
+    "__v": 8
+  },
+  {
+    "_id": "5af3bd016dc3ed150ce8d688",
+    "meta": {
+      "createAt": "2018-05-10T03:31:13.535Z",
+      "updateAt": "2018-05-10T03:31:13.535Z"
+    },
+    "musics": [],
+    "name": "摇滚",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bd0a6dc3ed150ce8d689",
+    "meta": {
+      "createAt": "2018-05-10T03:31:22.683Z",
+      "updateAt": "2018-05-10T06:34:41.403Z"
+    },
+    "musics": [
+      "5af3e4d98e7fa51fb87a6701",
+      "5af3e7c65b7a872858c581e2",
+      "5af3e8015b7a872858c581e3"
+    ],
+    "name": "民谣",
+    "__v": 3
+  },
+  {
+    "_id": "5af3bd186dc3ed150ce8d68a",
+    "meta": {
+      "createAt": "2018-05-10T03:31:36.988Z",
+      "updateAt": "2018-05-10T07:42:32.150Z"
+    },
+    "musics": [
+      "5af3f7aa7d949d1e24ea0c93",
+      "5af3f7e87d949d1e24ea0c94"
+    ],
+    "name": "电子",
+    "__v": 2
+  },
+  {
+    "_id": "5af3bd206dc3ed150ce8d68b",
+    "meta": {
+      "createAt": "2018-05-10T03:31:44.075Z",
+      "updateAt": "2018-05-10T03:31:44.075Z"
+    },
+    "musics": [],
+    "name": "舞曲",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bd516dc3ed150ce8d68c",
+    "meta": {
+      "createAt": "2018-05-10T03:32:33.671Z",
+      "updateAt": "2018-05-10T07:32:33.758Z"
+    },
+    "musics": [
+      "5af3f5917d949d1e24ea0c8d"
+    ],
+    "name": "说唱",
+    "__v": 1
+  },
+  {
+    "_id": "5af3bd5d6dc3ed150ce8d68d",
+    "meta": {
+      "createAt": "2018-05-10T03:32:45.095Z",
+      "updateAt": "2018-05-10T03:32:45.095Z"
+    },
+    "musics": [],
+    "name": "轻音乐",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bd646dc3ed150ce8d68e",
+    "meta": {
+      "createAt": "2018-05-10T03:32:52.905Z",
+      "updateAt": "2018-05-10T03:32:52.905Z"
+    },
+    "musics": [],
+    "name": "爵士",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bd6c6dc3ed150ce8d68f",
+    "meta": {
+      "createAt": "2018-05-10T03:33:00.997Z",
+      "updateAt": "2018-05-10T07:39:45.868Z"
+    },
+    "musics": [
+      "5af3f6d97d949d1e24ea0c91",
+      "5af3f7417d949d1e24ea0c92"
+    ],
+    "name": "乡村",
+    "__v": 2
+  },
+  {
+    "_id": "5af3bd726dc3ed150ce8d690",
+    "meta": {
+      "createAt": "2018-05-10T03:33:06.595Z",
+      "updateAt": "2018-05-10T03:33:06.595Z"
+    },
+    "musics": [],
+    "name": "古典",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bd7a6dc3ed150ce8d691",
+    "meta": {
+      "createAt": "2018-05-10T03:33:14.087Z",
+      "updateAt": "2018-05-10T03:33:14.087Z"
+    },
+    "musics": [],
+    "name": "民族",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bd8a6dc3ed150ce8d692",
+    "meta": {
+      "createAt": "2018-05-10T03:33:30.948Z",
+      "updateAt": "2018-05-10T03:33:30.948Z"
+    },
+    "musics": [],
+    "name": "古风",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bdb26dc3ed150ce8d693",
+    "meta": {
+      "createAt": "2018-05-10T03:34:10.259Z",
+      "updateAt": "2018-05-10T03:34:10.259Z"
+    },
+    "musics": [],
+    "name": "英伦",
+    "__v": 0
+  },
+  {
+    "_id": "5af3bdc96dc3ed150ce8d694",
+    "meta": {
+      "createAt": "2018-05-10T03:34:33.146Z",
+      "updateAt": "2018-05-10T03:34:33.146Z"
+    },
+    "musics": [],
+    "name": "金属",
+    "__v": 0
+  },
+  {
+    "_id": "5af3be226dc3ed150ce8d695",
+    "meta": {
+      "createAt": "2018-05-10T03:36:02.073Z",
+      "updateAt": "2018-05-10T03:36:02.073Z"
+    },
+    "musics": [],
+    "name": "拉丁",
+    "__v": 0
+  },
+  {
+    "_id": "5af3be316dc3ed150ce8d696",
+    "meta": {
+      "createAt": "2018-05-10T03:36:17.723Z",
+      "updateAt": "2018-05-10T06:30:23.644Z"
+    },
+    "musics": [
+      "5af3e5928e7fa51fb87a6703",
+      "5af3e5d18e7fa51fb87a6704",
+      "5af3e6108e7fa51fb87a6705",
+      "5af3e6a15b7a872858c581e0",
+      "5af3e6ff5b7a872858c581e1"
+    ],
+    "name": "蓝调",
+    "__v": 5
+  }
+]

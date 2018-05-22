@@ -1,0 +1,105 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/index.css",type="text/css",rel="stylesheet")
+
+		#index
+			#banner_tabs.flexslider
+				ul.slides
+					li
+						a(title="" href="#")
+							img(width='1100px' height='482' alt='' style="background:url(/images/banner1.jpg) no-repeat center" src="/images/alpha.png")
+					li
+						a(title='' href="#")
+							img(width='1100px' height='482' alt='' style="background:url(/images/banner2.jpg) no-repeat center" src="/images/alpha.png")
+					li
+						a(title='' href="#")
+							img(width='1100px' height='482' alt='' style="background:url(/images/banner3.jpg) no-repeat center" src="/images/alpha.png")
+				ul.flex-direction-nav
+					li
+						a.flex-prev(href='javascript:;') Previous
+					li
+						a.flex-next(href='javascript:;') Next
+				ol#bannerCtrl.flex-control-nav.flex-control-paging
+					li
+						a 1
+					li
+						a 2
+					li 
+						a 3
+				
+			if state == 0			
+				.container.lists.index
+					.row
+						.col-md-5.col-md-offset-1
+							ul.ul-list
+								li
+								
+									strong.text-danger 最近更新
+								-var i = 0
+								each item in musics
+									-i++
+									li
+										span.text-danger.col-sm-1 #{i}.
+										span.musicTitle.col-sm-6
+											a.text-info(href="/music/#{item._id}") #{item.title} - #{item.singer}
+										//- a.text-into(href="/music/singer/#{item.singer}") #{item.singer}
+										.text-muted
+											button.glyphicon.glyphicon-play-circle.btn-paly(data-id="#{item._id}")
+											//- button.glyphicon.glyphicon-download-alt
+											button.glyphicon.glyphicon-plus.btn-add(data-id="#{item._id}")
+						
+						.col-md-5
+							ul.ul-list
+								li
+									strong.text-danger 热门点击
+
+								-var i = 0
+								each item in musics1
+									-i++
+									li
+										span.text-danger.col-sm-1 #{i}.
+										span.musicTitle.col-sm-6
+											a.text-info(href="/music/#{item._id}") #{item.title} - #{item.singer}
+										//- a.text-into.col-sm-3(href="/music/singer/#{item.singer}") #{item.singer}
+										.text-muted
+											button.glyphicon.glyphicon-play-circle.col-sm-2.btn-paly(data-id="#{item._id}")
+											//- button.glyphicon.glyphicon-download-alt.col-sm-2
+											button.glyphicon.glyphicon-plus.col-sm-2.btn-add(data-id="#{item._id}")
+			else
+				.container.lists.index
+					.row
+						.col-md-5.col-md-offset-1
+							ul.ul-list
+								li
+									strong.text-danger 最近更新
+								-var i = 0
+								each item in musics
+									-i++
+									li
+										span.text-danger.col-sm-1 #{i}.
+										span.musicTitle.col-sm-6
+											a.text-info(href="/music/#{item._id}") #{item.title} - #{item.singer}
+										.text-muted
+											button.glyphicon.glyphicon-play-circle.btn-paly(data-id="#{item._id}")
+											button.glyphicon.glyphicon-plus.btn-add(data-id="#{item._id}")
+						.col-md-5
+							ul.ul-list#recommend
+								li
+									strong.text-danger 每日推荐
+								-var i = 0
+								each item in history
+									-i++
+									li
+										span.text-danger.col-sm-1 #{i}.
+										span.musicTitle.col-sm-6
+											a.text-info(href="/music/#{item._id}") #{item.title} - #{item.singer}
+										.text-muted
+											button.glyphicon.glyphicon-play-circle.btn-paly(data-id="#{item._id}")
+											button.glyphicon.glyphicon-plus.btn-add(data-id="#{item._id}")
+	script(src="/js/musicIndex.js")
+
+
+	script(src="/js/player.js")
+	

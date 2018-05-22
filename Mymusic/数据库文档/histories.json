@@ -1,0 +1,87 @@
+[
+  {
+    "_id": "5af3c0816dc3ed150ce8d699",
+    "meta": {
+      "createAt": "2018-05-10T03:46:09.196Z",
+      "updateAt": "2018-05-10T03:46:09.196Z"
+    },
+    "listen": 1,
+    "collect": 0,
+    "continue": 0,
+    "comment": 0,
+    "count": 0,
+    "user": "5af3bb5d463a7d1e2cd0c8e5",
+    "music": "5af3c0616dc3ed150ce8d698",
+    "singer": "刘明汉",
+    "category": "流行",
+    "__v": 0
+  },
+  {
+    "_id": "5af3c2b76dc3ed150ce8d69b",
+    "meta": {
+      "createAt": "2018-05-10T03:55:35.702Z",
+      "updateAt": "2018-05-10T03:55:35.702Z"
+    },
+    "listen": 0,
+    "collect": 2,
+    "continue": 0,
+    "comment": 0,
+    "count": 0,
+    "user": "5af3bb5d463a7d1e2cd0c8e5",
+    "music": "5af3c26f6dc3ed150ce8d69a",
+    "singer": "谭维维",
+    "category": "流行",
+    "__v": 0
+  },
+  {
+    "_id": "5af3e4f88e7fa51fb87a6702",
+    "meta": {
+      "createAt": "2018-05-10T06:21:45.000Z",
+      "updateAt": "2018-05-10T06:25:47.495Z"
+    },
+    "listen": 1,
+    "collect": 0,
+    "continue": 0,
+    "comment": 0,
+    "count": 3,
+    "user": "5af3e3c18e7fa51fb87a6700",
+    "music": "5af3e4d98e7fa51fb87a6701",
+    "singer": "梁俊",
+    "category": "民谣",
+    "__v": 0
+  },
+  {
+    "_id": "5af3e8195b7a872858c581e4",
+    "meta": {
+      "createAt": "2018-05-10T06:35:05.888Z",
+      "updateAt": "2018-05-10T06:35:38.380Z"
+    },
+    "listen": 1,
+    "collect": 2,
+    "continue": 0,
+    "comment": 0,
+    "count": 0,
+    "user": "5af3e3c18e7fa51fb87a6700",
+    "music": "5af3e8015b7a872858c581e3",
+    "singer": "花粥",
+    "category": "民谣",
+    "__v": 0
+  },
+  {
+    "_id": "5af3f59e7d949d1e24ea0c8e",
+    "meta": {
+      "createAt": "2018-05-10T07:32:46.558Z",
+      "updateAt": "2018-05-10T07:32:46.558Z"
+    },
+    "listen": 0,
+    "collect": 2,
+    "continue": 0,
+    "comment": 0,
+    "count": 0,
+    "user": "5af3bb5d463a7d1e2cd0c8e5",
+    "music": "5af3f5917d949d1e24ea0c8d",
+    "singer": "松下優也 (まつしたゆうや)",
+    "category": "说唱",
+    "__v": 0
+  }
+]

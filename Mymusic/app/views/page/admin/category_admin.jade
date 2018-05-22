@@ -1,0 +1,14 @@
+extends ../../adminLayout
+
+block content
+	head
+		link(href="/css/adminIndex.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		form.form-horizontal(method="post",action="/admin/category/new")
+				.form-group
+				label.col-sm-2.control-label(for="inputCategory") 分类
+				.col-sm-5
+					input#inputCategory.form-control(type="text",name="category[name]")
+				.col-sm-2
+					button.btn.btn-default(type="submit") 保存

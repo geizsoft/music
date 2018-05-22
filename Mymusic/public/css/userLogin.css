@@ -1,0 +1,16 @@
+#loginPage{
+	margin-top: 80px;
+    margin-left: 25%;
+    border: 1px solid #888;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px #888;
+    z-index: 100;
+    background-color: rgba(255,255,255,0.9);
+
+}
+#loginPage form{
+	padding-top: 40px;
+}
+#player{
+	display: none;
+}

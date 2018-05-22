@@ -1,0 +1,19 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/userPage.css",type="text/css",rel="stylesheet")
+
+	.container-fluid#menu
+		div.listen.row
+			div.uptitle.col-sm-10.col-sm-offset-1
+				span 听歌记录 &nbsp;
+				span 累积听歌 #{listen.length}首
+			ul.upul.col-sm-10.col-sm-offset-1
+				-var i = 0
+				each item in listen
+					-++i
+					li
+						span.text-danger #{i}.
+						span
+							a(href="/music/#{item.music._id}") #{item.music.title} - #{item.music.singer}

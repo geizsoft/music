@@ -1,0 +1,64 @@
+#menu{
+	margin-top: 60px;
+	/*改进：可以获取屏幕高度后设置高度*/
+	background: #fff;
+}
+#menu .lists{
+	min-height: 500px;
+
+}
+
+.pageul{
+	margin:0 auto;
+	text-align: center;
+}
+#player{
+	/*display: none;*/
+}
+.ul-list{
+	margin: 0 auto;
+	margin-top: 10px;
+	padding: 0;
+}
+ strong{
+	display: block;
+	width: 100%;
+	font-size: 20px;
+	border-bottom: 2px solid #c20c0c;
+}
+.ul-list li{
+	padding-left: 20px;
+	height: 40px;
+	/*font-weight: bold;*/
+	line-height: 2.5;
+	border:1px solid #ccc;
+	margin:0;
+}
+.ul-list li a{
+	color: #333;
+	text-decoration: none;
+	display: inline-block;
+}
+.ul-list li a:hover{
+	color: #888;
+	text-decoration: none;
+}
+.text-muted{
+   
+}
+.text-muted button{
+	border: none;
+	background-color: rgba(0,0,0,0);
+	outline: none;
+}
+.text-muted button:hover{
+	color: #666;
+}
+.text-muted .glyphicon{
+	font-size: 18px;
+	/*border: 1px solid red;*/
+}
+.text-muted button:focus{
+	color: #ccc;
+
+}

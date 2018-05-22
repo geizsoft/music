@@ -1,0 +1,23 @@
+extends ../../adminLayout
+
+block content
+	head
+		link(href="/css/adminIndex.css",type="text/css",rel="stylesheet")
+
+
+	.container-fluid#menu
+		.row
+			ul.col-sm-10.clearfix.col-sm-offset-2
+				li#user-li.col-sm-4
+					div.around 
+						a(href="/admin/userlist" ) 账号管理
+				li#cate-li.col-sm-4
+					div.around
+						a(href="/admin/categoriesList" ) 音乐分类管理
+				li#music-li.col-sm-4
+					div.around
+						a(href="/admin/list" ) 音乐文件管理
+			
+
+	script(src="/js/adminIndex.js")
+			

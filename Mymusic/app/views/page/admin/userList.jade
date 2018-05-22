@@ -1,0 +1,70 @@
+extends ../../adminLayout
+
+
+block content
+	head
+		link(href="/css/adminIndex.css",type="text/css",rel="stylesheet")
+
+			
+	.container#menu
+		.row
+			table.table.table-hover.table-bordered
+				thead
+					tr
+						th 名字
+						th 时间
+						th 邮箱
+						th 电话
+						th 权限
+						th 修改权限
+						th 删除
+				tbody
+					each item in users
+						tr(class="item-id-#{item._id}")
+							td #{item.name}
+							td #{moment(item.meta.updateAt).format('YYYY/MM/DD')}
+							td #{item.email}
+							td #{item.phone}
+							td.roles #{item.role}
+							if item.role <= 50
+								td: select(class='changerole' style="outline:none;" data-id="#{item._id}")
+										option 修改权限
+										option(value="0") 0
+										option(value="10") 10
+										option(value="50") 50
+							if item.role !== 60
+								td
+									button.btn.btn-danger.delete(type="button",data-id="#{item._id}") 删除
+							else
+								td
+	.container.pageul
+		ul.pagination
+			if totalPage > 5
+				- for (var i = 0; i < 4; i++){
+					-if(currentPage == (i + 1)){
+						li.active 
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{currentPage}
+					-}
+					-else{
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+					-}
+				-}
+				li
+					span ...
+				- for (var i = totalPage - 1; i < totalPage;i++){
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+				-	}
+			else
+				- for (var i = 0; i < totalPage; i++){
+					-if(currentPage == (i + 1)){
+						li.active 
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{currentPage}
+					-}
+					-else{
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+					-}
+				-}
+	script(src="/js/userlist.js")

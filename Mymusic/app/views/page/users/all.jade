@@ -1,0 +1,63 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/all.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		div.category
+			span.cateName 全部
+			a.btn.btn-default.choice 选择分类
+			div.categories
+				div.trangle
+					div
+				a.btn.btn-default#alls 全部
+				ul.clearfix
+					each item in categories
+						li
+							a.cate-item(data-id='#{item._id}') #{item.name}
+		ul.ul-list
+			each item in musics
+				li
+					a(href="/music/#{item._id}") #{item.title} - 
+					a(href="/music/singer/#{item.singer}") #{item.singer}
+
+	.container.pageul
+
+		ul.pagination
+			li
+				a(href="#") &laquo;
+			if totalPage > 5
+				- for (var i = 0; i < 4; i++){
+					-if(currentPage == (i + 1)){
+						li.active 
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{currentPage}
+					-}
+					-else{
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+					-}
+				-}
+				li
+					span ...
+				- for (var i = totalPage - 1; i < totalPage;i++){
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+				-	}
+			else
+				- for (var i = 0; i < totalPage; i++){
+					-if(currentPage == (i + 1)){
+						li.active 
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{currentPage}
+					-}
+					-else{
+						li
+							a.item(id="#{i}",data-id="#{i}",data-total=totalPage) #{i + 1}
+					-}
+				-}
+			li
+				a(href="#") &raquo;
+
+	script(src="/js/all.js")
+	script(src="/js/player.js")
+	

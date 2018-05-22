@@ -1,0 +1,25 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/musicSinger.css",type="text/css",rel="stylesheet")
+
+
+	.container#menu
+			.row
+				strong.text-danger #{singer}
+				ul
+					-var i = 0
+					each item in musics
+						-i++
+						li
+							span.text-danger #{i}.
+							span.musicTitle
+								a.text-info(href="/music/#{item._id}") #{item.title} - #{item.singer}
+							.text-muted
+								button.glyphicon.glyphicon-play-circle.btn-paly(data-id="#{item._id}")
+								//- button.glyphicon.glyphicon-download-alt
+								button.glyphicon.glyphicon-plus.btn-add(data-id="#{item._id}")
+
+	script(src="/js/player.js")
+	

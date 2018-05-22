@@ -1,0 +1,42 @@
+extends ../../layout
+block content
+	head
+		link(href="/css/userSign.css",type="text/css",rel="stylesheet")
+	
+	.container#loginPage.col-sm-6
+		.col-md-12
+			form.form-horizontal(method="POST",action="/user/signin")
+					.form-group
+						label.col-sm-2.control-label(for="signName") 用户名
+						.col-sm-6
+							input#signName.form-control.required(name="user[name]",type="text")
+					.form-group
+						label.col-sm-2.control-label(for="signPassword") 密码
+						.col-sm-6
+							input#signPassword.form-control.required(name="user[password]",type="password")
+					.form-group
+						label.col-sm-2.control-label(for="signPassword2") 再次输入
+						.col-sm-6
+							input#signPassword2.form-control.required(name="user[password2]",type="password")
+					.form-group
+						label.col-sm-2.control-label(for="signEmail") 邮箱
+						.col-sm-6
+							input#signEmail.form-control.required(name="user[email]",type="email")
+						
+					.form-group
+						label.col-sm-2.control-label(for='write') 填写验证码
+						.col-sm-4
+							input#write.form-control.required(type='text')
+						.col-sm-2
+							a.btn.btn-success.required#sendemail 发送邮箱验证码
+						p.col-sm-2.col-sm-offset-1.emailmessage 
+					//- .form-group
+					//- 	label.col-sm-2.control-label(for="signPhone") 电话号码
+					//- 	.col-sm-6
+					//- 		input#signPhone.form-control.required(name="user[phone]",type="text")
+					.modal-footer
+						a.btn.btn-default(href="/") 取消
+						button.btn.btn-success#send(type="submit") 确认
+	script(src="/js/userSign.js")
+	script(src='/js/three.js')
+	script(src='/js/canvas.js')

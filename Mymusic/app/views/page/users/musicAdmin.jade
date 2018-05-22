@@ -1,0 +1,76 @@
+extends ../../layout
+
+
+block content
+	head
+		link(href="/css/musicAdmin.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		form.form-horizontal(method="post",action="/music/new",enctype="multipart/form-data")
+			if music._id
+				input(type="hidden",name="music[_id]",value=music._id)
+			.form-group
+				label.col-sm-2.control-label(for="inputTitle") 歌曲名
+				.col-sm-5
+					input#inputTitle.form-control.required(type="text",name="music[title]",value=music.title)
+			.form-group
+				label.col-sm-2.control-label(for="inputSinger") 歌手
+				.col-sm-5
+					input#inputSinger.form-control.required(type="text",name="music[singer]",value=music.singer)
+			.form-group
+				label.col-sm-2.control-label(for="inputSpecial") 专辑
+				.col-sm-5
+					input#inputSpecial.form-control(type="text",name="music[special]",value=music.special)
+			.form-group
+				label.col-sm-2.control-label(for="inputTime") 时间
+				.col-sm-5
+					input#inputTime.form-control(type="text",name="music[time]",value=music.time)
+			.form-group
+				label.col-sm-2.control-label(for="inputCountry") 国家
+				.col-sm-5
+					input#inputCountry.form-control(type="text",name="music[country]",value=music.country)
+			.form-group
+				label.col-sm-2.control-label(for="inputLanguage") 语言
+				.col-sm-5
+					input#inputLanguage.form-control(type="text",name="music[language]",value=music.language)
+			.form-group
+				label.col-sm-2.control-label(for="inputPublic") 分类选择
+				.col-sm-6
+					each cate in categories
+						label.radio-inline
+							if music._id
+								input(type="radio",name="music[category]",value="#{cate._id}",checked=cate._id.toString()== music.category.toString())
+								| #{cate.name}
+							else
+								input(type="radio",name="music[category]",value="#{cate._id}") 
+								| #{cate.name}
+			.form-group
+				label.col-sm-2.control-label(for="inputSummary") 简介
+				.col-sm-5
+					input#inputSummary.form-control(type="text",name="music[summary]",value=music.summary)
+			.form-group
+				label.col-sm-2.control-label(for="inputPoster") 海报地址
+				.col-sm-5
+					input#inputPoster.form-control(type="text",name="music[poster]",value=music.poster)
+				span.text-danger (可以本地上传或者填写网络路径)
+			.form-group.input-button
+				label.col-sm-2.control-label.inputupLabel(for="inputUp") 上传海报
+				.col-sm-5.fileinput-button#poster
+					span.btn.btn-success 上传
+					input#inputUp(type="file",name="inputUp")
+			.form-group
+				label.col-sm-2.control-label(for="inputSong") 歌曲文件
+				.col-sm-5
+					input#inputSong.form-control(type="text",name="music[song]",value=music.song)
+				span.text-danger (可以本地上传或者填写网络路径)
+			.form-group
+				label.col-sm-2.control-label(for="inputUpSong") 上传歌曲
+				.col-sm-5.fileinput-button#song
+					span.btn.btn-success 上传
+					input#inputUpSong(type="file",name="inputUpSong")
+			.form-group
+				.col-sm-offset-2.col-sm-2
+					button.btn.btn-default(type="submit",id="submit") 录入
+				.col-sm-offset-2
+					button.btn.btn-default(type="reset",id="resets") 重置
+	script(src="/js/musicAdmin.js")

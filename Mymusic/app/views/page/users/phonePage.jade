@@ -1,0 +1,17 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/pwdPage.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		.col-sm-2
+		form.form-horizontal.col-sm-10(method="post",action="/user/update/phone")
+			input(type="hidden",name="user[_id]",value=user.id)
+			.form-group
+				label.col-sm-2.control-lable 请输入电话号码
+				.col-sm-5
+					input.form-control(type="text",name="user[pwd]")
+			.form-group
+				.col-sm-offset-2.col-sm-2
+					button.btn.btn-success(type="submit",id="submit") 提交

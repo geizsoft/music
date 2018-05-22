@@ -1,0 +1,34 @@
+extends ../../layout
+block content
+	head
+		link(href="/css/userLogin.css",type="text/css",rel="stylesheet")
+
+	.container#loginPage.col-sm-6
+		.col-md-12
+			form.form-horizontal(method="POST",action="/user/login")
+					.form-group
+						label.col-sm-2.control-label(for="logName") 用户名
+						.col-sm-6
+							input#logName.form-control.require(name="user[name]",type="text",placeholder="用户名")
+					.form-group
+						label.col-sm-2.control-label(for="logPassword") 密码
+						.col-sm-6
+							input#logPassword.form-control.require(name="user[password]",type="password",placeholder="密码")
+					.form-group
+						label.col-sm-2.control-label(for="CAPTCHA") 验证码
+						.col-sm-2
+							input#CAPTCHA.form-control(name="",type="text",placeholder="请输入验证码")
+						.col-sm-2
+							.code#checkCAP.bg-success.text-center
+						.col-sm-3
+							a(href="#",onclick="createCAP()") 看不清换一张
+					.form-group
+							.col-sm-offset-7
+								a(href="/user/forgetpwd") 忘记密码
+					.modal-footer
+						a.btn.btn-default(href="/") 取消
+						button.btn.btn-success#send(type="submit",onclick="verify()") 确认
+	script(src="/js/userLogin.js")
+	script(src="/js/captcha.js")
+	script(src='/js/three.js')
+	script(src='/js/canvas.js')

@@ -1,0 +1,15 @@
+extends ../../layout
+
+block content
+	head
+		link(href="/css/pwdPage.css",type="text/css",rel="stylesheet")
+
+	.container#menu
+		table.table.table-hover.table-bordered
+			thead
+				tr
+					th 用户
+					th 歌曲
+					th 分类
+			tbody
+				//- each item in users
