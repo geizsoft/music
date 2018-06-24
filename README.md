@@ -3,6 +3,7 @@
 1.首页
 ![](https://github.com/geizsoft/music/raw/master/image/1.png)
 ![](https://github.com/geizsoft/music/raw/master/image/2.png)
+2.详情页面
 ![](https://github.com/geizsoft/music/raw/master/image/3.png)
 ![](https://github.com/geizsoft/music/raw/master/image/4.png)
 ![](https://github.com/geizsoft/music/raw/master/image/5.png)
