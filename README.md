@@ -16,3 +16,7 @@
 ![](https://github.com/geizsoft/music/raw/master/image/9.png)
 ### 6.录入页面
 ![](https://github.com/geizsoft/music/raw/master/image/10.png)
+
+## 简介
+### 1.后端搭建
+  * 使用NodeJs的express框架并且使用了部分的es6完成网站后端的搭建
