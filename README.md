@@ -1,5 +1,6 @@
 # 基于NodeJs和MongoDB搭建的音乐网站
 ## 网页显示效果
+1.首页
 ![](https://github.com/geizsoft/music/raw/master/image/1.png)
 ![](https://github.com/geizsoft/music/raw/master/image/2.png)
 ![](https://github.com/geizsoft/music/raw/master/image/3.png)
